@@ -98,7 +98,7 @@ module Amazon
 	return nil unless File.exist? cache_file
 
 	Amazon.dprintf( 'Fetching %s from cache...', digest )
-	File.open( File.join( cache_file ) ).readlines.to_s
+	File.open( cache_file ).readlines.join().to_s
       end
 
 
