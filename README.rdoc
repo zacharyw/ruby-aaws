@@ -76,14 +76,31 @@ amazon.co.uk, etc.
 
 == Installation
 
-Please see the +INSTALL+ file supplied with the software for details of how 
-to install Ruby/AWS. You can choose between an installation script and a
-RubyGems[http://www.rubygems.org/] installation.
+Use 'gem install zacharyw-ruby-aaws'. Alternatively, if you're using Bundler, 
+add *gem 'zacharyw-ruby-aaws'* to your Gemfile.
 
-Note, however, if opting for the gem installation, that Ruby/AWS's RubyForge
-UNIX name is now ruby-aaws. The ruby-aws name was taken by {another
-project}[http://rubyforge.org/projects/ruby-aws/] and this namespace clash
-prevented remote installation of the Ruby/AWS gem.
+In order for ruby-aaws to interact with Amazon, you need to provide it with 
+your API information and associate id. You can pass these directly into 
+the Request.new constructor, but that is not recommended. You should 
+instead create a file called .amazonrc, which looks like this:
+
+key_id = 'your_public_key'
+secret_key_id = 'your_private_key'
+associate = 'your_associate_id'
+cache = false
+locale = 'us'
+encoding = 'iso-8859-15'
+
+Put this file in your user directory. On Linux/Unix it will be wherever 
+cd ~ takes you (be sure to do it as the user you're running your rails 
+app as). On Windows, put it in C:\Users\Username.
+
+Lastly, just play around with using ruby-aaws and the Amazon API. The 
+Amazon API is very spaghetti-like, you'll probably have to experiment 
+to see how the returned Amazon xml gets mapped into ruby-aaws objects.
+
+The examples in this project are good, but you'll likely need to fiddle 
+with them.
 
 
 == Prerequisites
