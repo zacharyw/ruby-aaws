@@ -84,12 +84,12 @@ your API information and associate id. You can pass these directly into
 the Request.new constructor, but that is not recommended. You should 
 instead create a file called .amazonrc, which looks like this:
 
-key_id = 'your_public_key'
-secret_key_id = 'your_private_key'
-associate = 'your_associate_id'
-cache = false
-locale = 'us'
-encoding = 'iso-8859-15'
+ key_id = 'your_public_key'
+ secret_key_id = 'your_private_key'
+ associate = 'your_associate_id'
+ cache = false
+ locale = 'us'
+ encoding = 'iso-8859-15'
 
 Put this file in your user directory. On Linux/Unix it will be wherever 
 cd ~ takes you (be sure to do it as the user you're running your rails 
